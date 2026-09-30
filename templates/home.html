@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Management Console | IT Management Platform</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/home.css') }}">
+
+    <script>
+        // Apply saved theme before the page renders
+        let savedTheme = "light";
+        try { savedTheme = localStorage.getItem("management-console-theme") || "light"; } catch (error) {}
+
+        if (savedTheme) {
+            document.documentElement.setAttribute("data-theme", savedTheme);
+        }
+    </script>
+</head>
+
+<body>
+
+<!-- ==================== NAVBAR ==================== -->
+<nav class="navbar">
+
+    <div class="logo">
+        <a href="#home">
+
+            <span>MANAGEMENT CONSOLE</span>
+
+        </a>
+    </div>
+
+
+    <div class="nav-links">
+
+        <ul>
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#features">Features</a>
+            </li>
+
+            <li>
+                <a href="#network">Network</a>
+            </li>
+
+            <li>
+                <a href="#inventory">Inventory</a>
+            </li>
+
+            <li>
+                <a href="#maintenance">Maintenance</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#connect">Contact</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle"
+            id="themeToggle"
+            type="button"
+            aria-label="Toggle dark mode">
+
+        <span class="theme-icon sun">☀</span>
+        <span class="theme-icon moon">☾</span>
+
+    </button>
+
+</nav>
+
+
+<!-- ==================== HERO ==================== -->
+<section class="hero" id="home">
+
+   <div class="hero-content">
+
+    <div class="hero-brand">
+
+        <!--<img
+            src="{{ url_for('static', filename='images/logo.png') }}"
+            alt="Management Console"
+            class="hero-logo">-->
+
+        <span class="section-label">
+            IT MANAGEMENT PLATFORM
+        </span>
+
+    </div>
+
+
+        <h1>
+            Manage Your IT
+            Infrastructure
+            <span>From One Place</span>
+        </h1>
+
+
+        <p>
+            Manage your network, computers, inventory,
+            maintenance and reports efficiently from
+            one centralized platform.
+        </p>
+
+
+        <div class="hero-buttons">
+
+           <!---- <a href="#" class="btn primary-btn">
+                Launch Console →
+            </a>-->
+
+            <a href="#features" class="btn secondary-btn">
+                Explore Features
+            </a>
+
+        </div>
+
+
+        <!--<div class="hero-trust">
+
+            <div class="trust-item">
+                <strong>Centralized</strong>
+                <span>IT Management</span>
+            </div>
+
+            <div class="trust-item">
+                <strong>Network</strong>
+                <span>Discovery</span>
+            </div>
+
+            <div class="trust-item">
+                <strong>Asset</strong>
+                <span>Tracking</span>
+            </div>
+
+        </div>-->
+
+    </div>
+
+
+    <!-- ==================== HERO IMAGE ==================== -->
+    <div class="hero-image" aria-label="Management Console product overview">
+        <div class="preview-window">
+            <div class="preview-topbar">
+                <span class="preview-dots"><i></i><i></i><i></i></span>
+                <span>MANAGEMENT CONSOLE</span>
+                <span class="preview-live"><i></i> SYSTEM ONLINE</span>
+            </div>
+            <div class="preview-main">
+                <div class="preview-brand-card">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Management Console logo">
+                    <span>ONE PLATFORM</span>
+                    <strong>Your IT, in view.</strong>
+                    <p>Assets, network and maintenance, brought together.</p>
+                </div>
+                <div class="preview-dashboard">
+                    <div class="preview-heading"><span>Overview</span><span>Today <b>⌄</b></span></div>
+                    <div class="preview-metrics">
+                        <div><span>IT ASSETS</span><strong>126</strong><small>Across your organization</small></div>
+                        <div><span>NETWORK DEVICES</span><strong>42 <em>●</em></strong><small>Devices discovered</small></div>
+                    </div>
+                    <div class="preview-activity"><span class="activity-icon">↗</span><span><b>Network scan complete</b><small>42 devices are being monitored</small></span><span class="activity-check">✓</span></div>
+                    <div class="preview-activity"><span class="activity-icon amber">⌁</span><span><b>Maintenance overview</b><small>8 tasks need attention</small></span><span class="activity-check">›</span></div>
+                </div>
+            </div>
+            <div class="preview-caption"><span><i></i> Centralized IT management</span><span>01 / 04</span></div>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- ==================== STATS ==================== -->
+<section class="stats">
+
+    <div class="stat">
+        <h2>126</h2>
+        <p>IT Assets</p>
+    </div>
+
+    <div class="stat">
+        <h2>42</h2>
+        <p>Network Devices</p>
+    </div>
+
+    <div class="stat">
+        <h2>8</h2>
+        <p>Maintenance Tasks</p>
+    </div>
+
+    <div class="stat">
+        <h2>35</h2>
+        <p>Inventory Items</p>
+    </div>
+
+</section>
+
+
+<!-- ==================== FEATURES ==================== -->
+<section class="features" id="features">
+
+    <div class="section-header">
+
+        <span class="section-label">
+            PLATFORM FEATURES
+        </span>
+
+        <h2>
+            Everything You Need to Manage IT
+        </h2>
+
+        <p>
+            A centralized platform for managing your
+            organization's computers, network, inventory,
+            maintenance and reports.
+        </p>
+
+    </div>
+
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="card-icon">💻</div>
+
+            <h3>
+                Computer Management
+            </h3>
+
+            <p>
+                Manage computers, assigned devices,
+                system information and asset status.
+            </p>
+
+            <a href="#inventory">
+                Learn more →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🌐</div>
+
+            <h3>
+                Network Discovery
+            </h3>
+
+            <p>
+                Discover connected devices and collect
+                network information automatically.
+            </p>
+
+            <a href="#network">
+                Learn more →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">📦</div>
+
+            <h3>
+                Inventory Management
+            </h3>
+
+            <p>
+                Track IT equipment from stock and
+                assignment through maintenance and retirement.
+            </p>
+
+            <a href="#inventory">
+                Learn more →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🏢</div>
+
+            <h3>
+                Department Management
+            </h3>
+
+            <p>
+                Organize your IT assets and equipment
+                by department.
+            </p>
+
+            <a href="#inventory">
+                Learn more →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🔧</div>
+
+            <h3>
+                Maintenance
+            </h3>
+
+            <p>
+                Track maintenance requests, repairs
+                and equipment status.
+            </p>
+
+            <a href="#maintenance">
+                Learn more →
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">📊</div>
+
+            <h3>
+                Reports
+            </h3>
+
+            <p>
+                Generate reports about computers,
+                inventory and maintenance activities.
+            </p>
+
+            <a href="#reports">
+                Learn more →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================== NETWORK ==================== -->
+<section class="network-section" id="network">
+
+    <div class="network-content">
+
+        <span class="section-label">
+            NETWORK DISCOVERY
+        </span>
+
+        <h2>
+            Discover Every Device
+            Connected to Your Network
+        </h2>
+
+        <p>
+            Scan your local network automatically and
+            identify connected computers and devices
+            without manually entering each IP address.
+        </p>
+
+
+        <div class="network-features">
+
+            <div class="network-feature">
+                ✓ Automatic network range detection
+            </div>
+
+            <div class="network-feature">
+                ✓ IP and MAC address discovery
+            </div>
+
+            <div class="network-feature">
+                ✓ Online device detection
+            </div>
+
+            <div class="network-feature">
+                ✓ Computer and system information
+            </div>
+
+            <div class="network-feature">
+                ✓ Centralized network inventory
+            </div>
+
+        </div>
+
+
+        <a href="#" class="btn primary-btn">
+            Scan Network →
+        </a>
+
+    </div>
+
+
+    <div class="network-preview">
+
+        <div class="network-card">
+
+            <div class="network-card-header">
+
+                <h3>
+                    Network Discovery
+                </h3>
+
+                <span class="online-status">
+                    ● Online
+                </span>
+
+            </div>
+
+
+            <div class="network-info">
+
+                <span>Active Network</span>
+
+                <strong>
+                    172.29.219.11 / 16
+                </strong>
+
+            </div>
+
+
+            <div class="device-list">
+
+                <div class="device">
+                    <span>192.168.1.10</span>
+                    <strong>PC-FINANCE</strong>
+                    <span class="online">● ONLINE</span>
+                </div>
+
+                <div class="device">
+                    <span>192.168.1.11</span>
+                    <strong>PC-RECEPTION</strong>
+                    <span class="online">● ONLINE</span>
+                </div>
+
+                <div class="device">
+                    <span>192.168.1.15</span>
+                    <strong>SERVER</strong>
+                    <span class="online">● ONLINE</span>
+                </div>
+
+                <div class="device">
+                    <span>192.168.1.22</span>
+                    <strong>PC-HR</strong>
+                    <span class="online">● ONLINE</span>
+                </div>
+
+                <div class="device">
+                    <span>192.168.1.30</span>
+                    <strong>UNKNOWN</strong>
+                    <span class="offline">● OFFLINE</span>
+                </div>
+
+            </div>
+
+
+            <div class="network-card-footer">
+
+                <strong>42</strong>
+
+                <span>
+                    Devices Discovered
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================== HOW IT WORKS ==================== -->
+<section class="how-it-works">
+
+    <div class="section-header">
+
+        <span class="section-label">
+            HOW IT WORKS
+        </span>
+
+        <h2>
+            Network Discovery in Four Steps
+        </h2>
+
+    </div>
+
+
+    <div class="steps">
+
+        <div class="step">
+            <span class="step-number">01</span>
+
+            <h3>
+                Detect Network
+            </h3>
+
+            <p>
+                Detect the active network configuration.
+            </p>
+        </div>
+
+
+        <div class="step">
+            <span class="step-number">02</span>
+
+            <h3>
+                Scan Devices
+            </h3>
+
+            <p>
+                Search the network for connected devices.
+            </p>
+        </div>
+
+
+        <div class="step">
+            <span class="step-number">03</span>
+
+            <h3>
+                Identify Devices
+            </h3>
+
+            <p>
+                Collect available IP, MAC and system information.
+            </p>
+        </div>
+
+
+        <div class="step">
+            <span class="step-number">04</span>
+
+            <h3>
+                Manage Inventory
+            </h3>
+
+            <p>
+                Organize discovered devices in your IT inventory.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================== INVENTORY ==================== -->
+<section class="inventory-section" id="inventory">
+
+    <div class="section-header">
+
+        <span class="section-label">
+            IT INVENTORY
+        </span>
+
+        <h2>
+            Every Asset. One Place.
+        </h2>
+
+        <p>
+            Track your IT equipment throughout its lifecycle.
+        </p>
+
+    </div>
+
+
+    <div class="inventory-status">
+
+        <div class="status-card">
+            <span>IN STOCK</span>
+            <strong>35</strong>
+        </div>
+
+        <div class="status-card">
+            <span>ASSIGNED</span>
+            <strong>72</strong>
+        </div>
+
+        <div class="status-card">
+            <span>MAINTENANCE</span>
+            <strong>8</strong>
+        </div>
+
+        <div class="status-card">
+            <span>RETIRED</span>
+            <strong>11</strong>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================== MAINTENANCE ==================== -->
+<section class="maintenance-section" id="maintenance">
+
+    <div class="maintenance-content">
+
+        <span class="section-label">
+            MAINTENANCE
+        </span>
+
+        <h2>
+            Keep Your IT Running
+        </h2>
+
+        <p>
+            Track maintenance requests, monitor equipment
+            status and keep a complete history of interventions.
+        </p>
+
+    </div>
+
+
+    <div class="maintenance-card">
+
+        <h3>
+            Maintenance
+        </h3>
+
+        <div class="maintenance-item">
+            <strong>Printer - Room 201</strong>
+            <span>In Progress</span>
+        </div>
+
+        <div class="maintenance-item">
+            <strong>Computer - Finance</strong>
+            <span>Completed</span>
+        </div>
+
+        <div class="maintenance-item">
+            <strong>Network Switch</strong>
+            <span>Pending</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================== REPORTS ==================== -->
+<section class="reports-section" id="reports">
+
+    <div class="section-header">
+
+        <span class="section-label">
+            REPORTING
+        </span>
+
+        <h2>
+            Clear Reports. Better Visibility.
+        </h2>
+
+        <p>
+            Generate useful reports about your IT
+            infrastructure and assets.
+        </p>
+
+    </div>
+
+
+    <div class="report-cards">
+
+        <div class="report-card">
+            <h3>Computer Report</h3>
+            <strong>126</strong>
+            <span>Devices</span>
+        </div>
+
+        <div class="report-card">
+            <h3>Inventory Report</h3>
+            <strong>35</strong>
+            <span>Items</span>
+        </div>
+
+        <div class="report-card">
+            <h3>Maintenance Report</h3>
+            <strong>8</strong>
+            <span>Active Tasks</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================== ABOUT ==================== -->
+<section class="about-section" id="about">
+
+    <div class="section-header">
+
+        <span class="section-label">
+            ABOUT
+        </span>
+
+        <h2>
+            About Management Console
+        </h2>
+
+        <p>
+            Management Console is a centralized IT management
+            application designed to help organizations manage
+            computers, network devices, inventory, maintenance
+            and operational reports from one interface.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==================== CTA ==================== -->
+<!---<section class="cta-section">
+
+    <div class="cta-content">
+
+        <img src="{{ url_for('static', filename='images/logo.png') }}"
+             alt="Management Console Logo"
+             class="cta-logo">
+
+        <h2>
+            Ready to Manage Your IT Infrastructure?
+        </h2>
+
+        <p>
+            Launch Management Console and manage your
+            IT environment from one centralized platform.
+        </p>
+
+        <a href="#" class="btn primary-btn">
+            Launch Management Console →
+        </a>
+
+    </div>
+
+</section>-->
+
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+
+    <div class="footer-content">
+
+        <div class="footer-brand">
+
+            <div class="footer-logo">
+
+                    <h3>
+                    MANAGEMENT CONSOLE
+                </h3>
+
+            </div>
+
+            <p>
+                IT Management & Asset Platform
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <div>
+                <h4>Product</h4>
+
+                <a href="#features">Features</a>
+                <a href="#network">Network</a>
+                <a href="#inventory">Inventory</a>
+
+            </div>
+
+            <div>
+                <h4>Resources</h4>
+
+                <a href="#maintenance">Maintenance</a>
+                <a href="#reports">Reports</a>
+                <a href="#about">About</a>
+
+            </div>
+
+        </div>
+
+    </div>
+     <!-- SOCIAL -->
+
+            <div class="footer-social-area">
+
+                <h4>Connect</h4>
+
+
+                <div class="social-links">
+
+
+                    <!-- LINKEDIN -->
+
+                    <a
+                        href="https://www.linkedin.com/in/hamza-senhaji-33903b420/"
+                        class="social-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Visit Hamza Senhaji on LinkedIn">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="currentColor">
+
+                            <path
+                                d="M6.94 8.5A2.5 2.5 0 1 0
+                                6.94 3.5
+                                2.5 2.5 0 0 0
+                                6.94 8.5zM4.9 9.9h4.08V21H4.9zM11.4 9.9h3.9v1.52h.05c.54-1.03
+                                1.87-2.12 3.85-2.12
+                                4.12 0 4.88 2.71
+                                4.88 6.23V21H19.99v-4.86
+                                c0-1.16-.02-2.66-1.62-2.66
+                                -1.62 0-1.87 1.27-1.87 2.58V21H12.4z">
+                            </path>
+
+                        </svg>
+
+                    </a>
+
+
+
+                    <!-- GITHUB -->
+
+                    <a
+                        href="https://github.com/"
+                        class="social-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Visit GitHub">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="currentColor">
+
+                            <path
+                                d="M12 .5
+                                a12 12 0 0 0-3.79 23.39
+                                c.6.11.82-.26.82-.58
+                                v-2.23
+                                c-3.34.73-4.04-1.42-4.04-1.42
+                                -.55-1.4-1.34-1.77-1.34-1.77
+                                -1.09-.75.08-.73.08-.73
+                                1.2.08 1.83 1.23 1.83 1.23
+                                1.07 1.83 2.8 1.3 3.48.99
+                                .11-.78.42-1.3.76-1.6
+                                -2.67-.3-5.47-1.34-5.47-5.93
+                                0-1.31.47-2.38 1.23-3.22
+                                -.12-.3-.53-1.53.12-3.18
+                                0 0 1-.32 3.3 1.23
+                                a11.5 11.5 0 0 1 6 0
+                                c2.29-1.55 3.29-1.23 3.29-1.23
+                                .65 1.65.24 2.88.12 3.18
+                                .77.84 1.23 1.91 1.23 3.22
+                                0 4.6-2.8 5.62-5.48 5.92
+                                .43.37.81 1.1.81 2.22
+                                v3.29c0 .32.21.69.83.57
+                                A12 12 0 0 0 12 .5z">
+                            </path>
+
+                        </svg>
+
+                    </a>
+
+
+
+                    <!-- EMAIL -->
+
+                    <a
+                        class="social-link"
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=senhamza0304@gmail.com&su=Portfolio%20Contact"
+                        aria-label="Email Hamza Senhaji">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8">
+
+                            <rect
+                                x="3"
+                                y="5"
+                                width="18"
+                                height="14"
+                                rx="2">
+                            </rect>
+
+                            <path d="M3 7l9 6 9-6"></path>
+
+                        </svg>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 Management Console
+        </span>
+
+        <span>
+            Built by Hamza
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- ==================== THEME SCRIPT ==================== -->
+<script>
+const themeToggle = document.getElementById("themeToggle");
+const root = document.documentElement;
+function applyTheme(theme) {
+    const isLight = theme === "light";
+    root.setAttribute("data-theme", isLight ? "light" : "dark");
+    root.style.colorScheme = isLight ? "light" : "dark";
+    root.style.setProperty("--ink", isLight ? "#152b3a" : "#eaf4fb");
+    root.style.setProperty("--muted", isLight ? "#607486" : "#91a8b8");
+    root.style.setProperty("--muted-bright", isLight ? "#40596b" : "#b7cbd7");
+    root.style.setProperty("--blue-bright", isLight ? "#1685c2" : "#65c4fa");
+    root.style.setProperty("--surface", isLight ? "#ffffff" : "#101c27");
+    root.style.setProperty("--surface-raised", isLight ? "#f0f6fa" : "#142635");
+    root.style.setProperty("--surface-soft", isLight ? "#e4f0f7" : "#182f40");
+    root.style.setProperty("--line", isLight ? "rgba(28,67,91,.16)" : "rgba(178,209,225,.16)");
+    root.style.setProperty("--line-strong", isLight ? "rgba(28,67,91,.28)" : "rgba(178,209,225,.28)");
+    themeToggle.setAttribute("aria-label", isLight ? "Switch to dark mode" : "Switch to light mode");
+    themeToggle.setAttribute("aria-pressed", String(isLight));
+    try { localStorage.setItem("management-console-theme", isLight ? "light" : "dark"); } catch (error) {}
+}
+applyTheme(root.getAttribute("data-theme"));
+themeToggle.addEventListener("click", () => applyTheme(root.getAttribute("data-theme") === "dark" ? "light" : "dark"));
+</script>
+
+</body>
+</html>
